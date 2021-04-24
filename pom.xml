@@ -57,6 +57,12 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
+    
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>lift</artifactId>
+        <version>3.4.0</version>
+      </dependency>
     </dependencies>
 
 </project>

@@ -6,9 +6,10 @@ Feature: Filter Search Result Products
     Background: SETUP
     Given The client access the store's main page
 
+    @automation
     Scenario: Verify filter displayed on Eletronic scetion
     Given I click in Eletrônicos products
-    When  I am in Eletrônicos section
+    Then  I am in Eletrônicos section
     Then I should be able to see this filters below
         |Gênero         |
         |Tipo de Produto|
@@ -23,7 +24,7 @@ Feature: Filter Search Result Products
 
     Scenario: Verify if the filter is applied 
     Given I click in Eletrônicos products
-    And I am in Eletrônicos section
+    Then I am in Eletrônicos section
     When I select this filter below
         |Gênero          |Feminino    |
         |Tipo de Produto |Caixa de Som| 
@@ -36,7 +37,7 @@ Feature: Filter Search Result Products
     
     Scenario: Verify if the field Marca is in accordance with the field Tipo de Produto 
     Given I click in Eletrônicos products
-    And  I am in Eletrônicos section
+    Then  I am in Eletrônicos section
     When I select this filter below
         |Tipo de Produto |Notebook    | 
     Then The field Marca must display this attributes below 
