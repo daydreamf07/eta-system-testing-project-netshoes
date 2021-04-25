@@ -29,9 +29,8 @@ Feature: Search Products
   @wip
   Scenario: Products suggestions list is updated as the user hover through search suggestions list
     Given I click on the search bar
-    And   I type the product name "Tênis"
-    When  I hover through the search suggestions list
-    Then  I verify that the products suggested changes
+    When  I type the product name "Tênis"
+    Then  I hover through the search suggestions list and verify that the products suggestions are displayed
 
 
 

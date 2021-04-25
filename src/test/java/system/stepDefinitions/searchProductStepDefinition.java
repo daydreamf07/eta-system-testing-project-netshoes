@@ -11,8 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import system.pages.MainPage;
 import system.pages.SearchProdutsPage;
 
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 import static system.helpers.Constants.ERROR_MESSAGE_SUB_TITLE;
 import static system.helpers.Constants.ERROR_MESSAGE_TITLE;
@@ -23,7 +22,8 @@ public class searchProductStepDefinition {
     private SearchProdutsPage searchPage = new SearchProdutsPage();
 
     @After
-    public void doSomethingAfter(Scenario scenario){
+    public void tearDown(){
+
         page.closePage();
     }
 
@@ -62,5 +62,15 @@ public class searchProductStepDefinition {
         List<String> errorMessageList = searchPage.errorSearchMessage();
         Assertions.assertEquals(ERROR_MESSAGE_TITLE, errorMessageList.get(0).toLowerCase());
         Assertions.assertEquals(ERROR_MESSAGE_SUB_TITLE, errorMessageList.get(1).toLowerCase());
+    }
+
+    @Then("I hover through the search suggestions list and verify that the products suggestions are displayed")
+    public void hoverSuggestionsListAndVerifyResults() throws InterruptedException {
+        List<List> productsListsuggested = searchPage.hoverSuggestionList();
+        Integer listSize = productsListsuggested.size();
+        Assertions.assertEquals(5,listSize);
+        for(int i = 0; i < listSize-1; i++){
+            Assertions.assertEquals(5,productsListsuggested.get(i).size());
+        }
     }
 }
