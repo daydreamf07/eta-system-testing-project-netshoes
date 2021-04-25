@@ -45,7 +45,7 @@ public class searchProduct_step {
 
     @Then("I verify that the list of products related to the search of {string} is displayed")
     public void resultSearchlist(String product) {
-        List<String> searchResult = searchPage.searchResultList();
+        List<String> searchResult = searchPage.getSearchResultList();
 
         for(int i = 0; i < searchResult.size(); i++){
             String searchResultProduct = searchResult.get(i).toLowerCase();
@@ -55,14 +55,14 @@ public class searchProduct_step {
 
     @Then("I verify that an error message informing there is no results for the searched product is displayed")
     public void verifyErrorMessage() {
-        List<String> errorMessageList = searchPage.errorSearchMessage();
+        List<String> errorMessageList = searchPage.getErrorSearchMessage();
         Assertions.assertEquals(ERROR_MESSAGE_TITLE, errorMessageList.get(0).toLowerCase());
         Assertions.assertEquals(ERROR_MESSAGE_SUB_TITLE, errorMessageList.get(1).toLowerCase());
     }
 
     @Then("I hover through the search suggestions list and verify that the products suggestions are displayed")
     public void hoverSuggestionsListAndVerifyResults() throws InterruptedException {
-        List<List> productsListsuggested = searchPage.hoverSuggestionList();
+        List<List> productsListsuggested = searchPage.getHoverSuggestionListResult();
         Integer listSize = productsListsuggested.size();
         Assertions.assertEquals(5,listSize);
         for(int i = 0; i < listSize-1; i++){
