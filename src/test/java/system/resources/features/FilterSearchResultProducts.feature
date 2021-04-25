@@ -4,7 +4,7 @@ Feature: Filter Search Result Products
     So that I can easily find the product that I want
 
     Background: SETUP
-    Given The client access the store's main page
+    Given I access the store's main page
 
     @automation
     Scenario: Verify filter displayed on Eletronic section

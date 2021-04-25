@@ -92,7 +92,7 @@ public class SearchProdutsPage {
         return getMarcaName;
     }
     
-    public List<String> searchResultList(){
+    public List<String> getSearchResultList(){
         List<WebElement> searchResults = driver.findElements(searchResultsLocator);
         List<String> productsNameList = new ArrayList<String>();
         for(int i = 0; i < searchResults.size(); i++){
@@ -101,7 +101,7 @@ public class SearchProdutsPage {
         return productsNameList;
     }
 
-    public List<String> errorSearchMessage(){
+    public List<String> getErrorSearchMessage(){
         WebElement errorMessageTitle = driver.findElement(errorMessageOneLocator);
         WebElement errorMessageSubTitle = driver.findElement(errorMessageTwoLocator);
         List<String> errorMessageList = new ArrayList<String>();
@@ -111,7 +111,7 @@ public class SearchProdutsPage {
     }
 
 
-    public List<List> hoverSuggestionList() throws InterruptedException {
+    public List<List> getHoverSuggestionListResult() throws InterruptedException {
         List<List> productsListsuggested = new ArrayList<List>();
 
         for(int i = 0; i < 5; i++){

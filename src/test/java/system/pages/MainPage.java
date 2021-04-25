@@ -52,7 +52,7 @@ public class MainPage {
         manager.endSession();
     }
 
-    public void clickSearcar(){
+    public void clickSearchBar(){
         WebElement searchBar = this.driver.findElement(searchInput);
         searchBar.click();
     }
