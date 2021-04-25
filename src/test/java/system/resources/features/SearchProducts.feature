@@ -11,12 +11,12 @@ Feature: Search Products
 
 
 
-  @wip
+  @automated
   Scenario: Search for an existing product
     Given I click on the search bar
-    When  I type the product name "Bolsa"
+    When  I type the product name "bolsa nike brasilia xs duff 9.0 - 25 litros"
     And   I click on the search button
-    Then  I verify that the list of products related to the search is displayed
+    Then  I verify that the list of products related to the search of "bolsa nike brasilia xs duff 9.0 - 25 litros" is displayed
 
   @wip
   Scenario: Search for a product that do not exist

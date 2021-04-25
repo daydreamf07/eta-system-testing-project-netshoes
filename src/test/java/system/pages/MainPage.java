@@ -28,8 +28,8 @@ public class MainPage {
      */
 
     public MainPage() {
-        driver = DriverManager.getDriver();
-        wait = DriverManager.getDriverWait();
+        this.driver = DriverManager.getDriver();
+        this.wait = DriverManager.getDriverWait();
     }
 
     public void accessPage(){
