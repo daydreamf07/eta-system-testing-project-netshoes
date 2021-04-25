@@ -1,13 +1,10 @@
 package system.stepDefinitions;
 
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import system.pages.MainPage;
 import system.pages.SearchProdutsPage;
 
@@ -16,14 +13,14 @@ import java.util.*;
 import static system.helpers.Constants.ERROR_MESSAGE_SUB_TITLE;
 import static system.helpers.Constants.ERROR_MESSAGE_TITLE;
 
-public class searchProductStepDefinition {
+public class searchProduct_step {
 
     private MainPage page = new MainPage();
     private SearchProdutsPage searchPage = new SearchProdutsPage();
 
-    @After
+    @AfterEach
     public void tearDown(){
-
+        System.out.println("PRINTA ISSO AQUI");
         page.closePage();
     }
 
@@ -73,4 +70,9 @@ public class searchProductStepDefinition {
             Assertions.assertEquals(5,productsListsuggested.get(i).size());
         }
     }
+//
+//    @Then("I close the browser page")
+//    public void closeBrowser(){
+//        page.closePage();
+//    }
 }
