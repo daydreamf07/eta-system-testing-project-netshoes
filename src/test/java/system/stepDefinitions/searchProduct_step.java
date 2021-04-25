@@ -1,9 +1,9 @@
 package system.stepDefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import system.pages.MainPage;
 import system.pages.SearchProdutsPage;
@@ -18,9 +18,8 @@ public class searchProduct_step {
     private MainPage page = new MainPage();
     private SearchProdutsPage searchPage = new SearchProdutsPage();
 
-    @AfterEach
+    @After
     public void tearDown(){
-        System.out.println("PRINTA ISSO AQUI");
         page.closePage();
     }
 

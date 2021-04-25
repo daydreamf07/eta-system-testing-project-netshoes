@@ -65,7 +65,7 @@ public class SearchProdutsPage {
             this.wait.until(ExpectedConditions.visibilityOfElementLocated(searchSuggestionsListLocator));
             WebElement suggestions = driver.findElement(searchSuggestionsListLocator);
             action.moveToElement(suggestions).perform();
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             List<WebElement> products = driver.findElements(suggestionProductsListLocator);
             List<String> productsSuggested = new ArrayList<String>();
             for(int t = 0; t < products.size(); t++) {

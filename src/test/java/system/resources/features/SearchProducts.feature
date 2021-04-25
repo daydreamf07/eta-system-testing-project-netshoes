@@ -16,7 +16,6 @@ Feature: Search Products
     When  I type the product name "bolsa nike brasilia xs duff 9.0 - 25 litros"
     And   I click on the search button
     Then  I verify that the list of products related to the search of "bolsa nike brasilia xs duff 9.0 - 25 litros" is displayed
-#    And   I close the browser page
 
 
   @automated
@@ -25,7 +24,6 @@ Feature: Search Products
     When  I type the product name "anythingatall"
     And   I click on the search button
     Then  I verify that an error message informing there is no results for the searched product is displayed
-#    And   I close the browser page
 
 
   @wip
@@ -33,4 +31,3 @@ Feature: Search Products
     Given I click on the search bar
     When  I type the product name "Tênis"
     Then  I hover through the search suggestions list and verify that the products suggestions are displayed
-#    And   I close the browser page
