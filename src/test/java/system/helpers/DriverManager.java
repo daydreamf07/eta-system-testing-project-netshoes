@@ -18,7 +18,6 @@ public class DriverManager {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
             System.setProperty("webdriver.chrome.silentOutput", "true");
-//            Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
             driver = new ChromeDriver();
         }
 
@@ -27,7 +26,7 @@ public class DriverManager {
 
     public static WebDriverWait getDriverWait(){
         if (driverWait == null) {
-            driverWait = new WebDriverWait(driver, 5);
+            driverWait = new WebDriverWait(driver, 10);
         }
 
         return driverWait;
