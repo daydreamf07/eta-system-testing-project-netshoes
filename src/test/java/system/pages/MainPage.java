@@ -18,6 +18,7 @@ public class MainPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    DriverManager manager = new DriverManager();
 
     private By siteLogo = By.cssSelector(".logo > h1");
     private By searchInput = By.id("search-input");
@@ -36,6 +37,10 @@ public class MainPage {
         driver.get(MAIN_PAGE);
         wait.until(ExpectedConditions.visibilityOfElementLocated(siteLogo));
         driver.manage().window().maximize();
+    }
+
+    public void closePage(){
+        manager.endSession();
     }
 
     public void clickSearchBar(){

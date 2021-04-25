@@ -10,7 +10,6 @@ Feature: Search Products
     Given I access the store's main page
 
 
-
   @automated
   Scenario: Search for an existing product
     Given I click on the search bar
@@ -18,12 +17,14 @@ Feature: Search Products
     And   I click on the search button
     Then  I verify that the list of products related to the search of "bolsa nike brasilia xs duff 9.0 - 25 litros" is displayed
 
-  @wip
+
+  @automated
   Scenario: Search for a product that do not exist
     Given I click on the search bar
     When  I type the product name "anythingatall"
     And   I click on the search button
     Then  I verify that an error message informing there is no results for the searched product is displayed
+
 
   @wip
   Scenario: Products suggestions list is updated as the user hover through search suggestions list

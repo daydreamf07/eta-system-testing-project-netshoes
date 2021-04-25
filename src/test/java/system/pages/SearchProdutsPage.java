@@ -18,8 +18,9 @@ public class SearchProdutsPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private By searchInput = By.id("search-input");
     private By searchResultsLocator = By.cssSelector("a[class=\"item-card__description__product-name\"]>span");
+    private By errorMessageOneLocator = By.cssSelector("div[class=\"divisor-bottom no-results\"]>.wrapper>h2");
+    private By errorMessageTwoLocator = By.cssSelector("div[class=\"divisor-bottom no-results\"]>.wrapper>h3");
 
     /*
      Services
@@ -37,5 +38,14 @@ public class SearchProdutsPage {
             productsNameList.add(searchResults.get(i).getText());
         }
         return productsNameList;
+    }
+
+    public List<String> errorSearchMessage(){
+        WebElement errorMessageTitle = driver.findElement(errorMessageOneLocator);
+        WebElement errorMessageSubTitle = driver.findElement(errorMessageTwoLocator);
+        List<String> errorMessageList = new ArrayList<String>();
+        errorMessageList.add(errorMessageTitle.getText());
+        errorMessageList.add(errorMessageSubTitle.getText());
+        return errorMessageList;
     }
 }
